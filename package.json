@@ -11,8 +11,10 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@octokit/rest": "^15.12.1",
     "@storybook/addon-info": "^3.4.11",
     "@storybook/react": "^4.0.0-alpha.23",
+    "@types/axios": "^0.14.0",
     "@types/jest": "^23.3.2",
     "@types/storybook__addon-info": "^3.4.2",
     "@types/storybook__react": "^3.0.9",
@@ -25,6 +27,7 @@
     "typescript": "^3.1.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "monaco-editor": "^0.14.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"

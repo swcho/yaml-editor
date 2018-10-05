@@ -11,16 +11,21 @@ export class YamlEditor extends React.Component<YamlEditor.Props> {
     );
   }
 
+  private editor: monaco.editor.IStandaloneCodeEditor;
   componentDidMount() {
     if (this.root) {
       const {
         options,
       } = this.props;
-      monaco.editor.create(this.root, {
+      this.editor = monaco.editor.create(this.root, {
         language: 'yaml',
         ...options,
       });
     }
+  }
+
+  getValue() {
+    return this.editor.getValue();
   }
 }
 
