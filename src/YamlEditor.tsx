@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 require('./yaml/monaco.contribution')
-import * as monaco from 'monaco-editor';
+// import * as monaco from 'monaco-editor';
 // import * as monaco from 'monaco-yaml';
 
 export class YamlEditor extends React.Component<YamlEditor.Props> {
