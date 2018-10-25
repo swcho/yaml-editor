@@ -1,8 +1,22 @@
 
 import * as React from 'react';
+import * as monaco from 'monaco-editor-core';
+const Worker = require('worker-loader!./ext/yaml.worker');
+
 require('./ext/monaco.contribution')
-// import * as monaco from 'monaco-editor';
 // import * as monaco from 'monaco-yaml';
+
+window['MonacoEnvironment'] = {
+  getWorker(workerId, label) {
+    console.log({ workerId, label });
+    const ret = new Worker()
+    return ret;
+  },
+  getWorkerUrl(workerId, label) {
+    debugger;
+    return 'monaco-editor-worker-loader-proxy.js';
+  }
+};
 
 export class YamlEditor extends React.Component<YamlEditor.Props> {
   private root: HTMLDivElement | null;

@@ -7,9 +7,12 @@
 import * as worker from 'monaco-editor-core/esm/vs/editor/editor.worker';
 import { YAMLWorker } from './yamlWorker';
 
-self.onmessage = () => {
+const ctx: Worker = self as any;
+
+ctx.onmessage = () => {
 	// ignore the first message
 	worker.initialize((ctx, createData) => {
+    debugger;
 		return new YAMLWorker(ctx, createData)
 	});
 };

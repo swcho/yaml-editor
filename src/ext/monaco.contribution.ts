@@ -2,6 +2,8 @@
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+/// <reference path="./monaco.d.ts"/>
+
 'use strict';
 
 import * as mode from './yamlMode';
@@ -71,5 +73,6 @@ monaco.languages.register({
 	mimetypes: ['application/x-yaml']
 });
 monaco.languages.onLanguage('yaml', () => {
-	withMode(mode => mode.setupMode(yamlDefaults));
+  // debugger;
+	// withMode(mode => mode.setupMode(yamlDefaults));
 });
