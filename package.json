@@ -22,6 +22,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "jest": "^23.6.0",
+    "monaco-editor-webpack-plugin": "^1.5.4",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "ts-jest": "^23.10.3",
     "typescript": "^3.1.1"
@@ -29,7 +30,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "monaco-editor": "^0.14.3",
+    "monaco-yaml": "^1.0.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "vscode-json-languageservice": "^3.2.0",
+    "vscode-languageserver-types": "^3.13.0"
   }
 }
