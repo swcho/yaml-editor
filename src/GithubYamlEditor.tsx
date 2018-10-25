@@ -19,7 +19,6 @@ function parseQuery<T>(search: string): T {
   return ret;
 }
 
-
 export class GithubYamlEditor extends React.Component<GithubYamlEditor.Props, {
   token: string | null;
   content: contents.Item | null;
@@ -106,15 +105,6 @@ export class GithubYamlEditor extends React.Component<GithubYamlEditor.Props, {
     const {
       token,
     } = this.state;
-    const query = parseQuery<{ code: string }>(location.search);
-    const code = query.code;
-    if (code && !token) {
-      try {
-        const resp = await axios.post(getAccessToken(code, location.href)).then(resp => resp.data);
-      } catch(e) {
-        console.error(e)
-      }
-    }
     if (token) {
       const content = await githubApi({ token }).repos(repoFullName).contents(contentPath).get();
       this.setState({ content })
