@@ -5,9 +5,7 @@
 'use strict';
 
 import * as mode from './yamlMode';
-
-import Emitter = monaco.Emitter;
-import IEvent = monaco.IEvent;
+import { Emitter, IEvent } from 'monaco-editor-core';
 
 declare var require: <T>(moduleId: [string], callback: (module: T) => void) => void;
 
