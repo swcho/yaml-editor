@@ -119,9 +119,9 @@ export default class URI {
 				// other path
 				value = this._path;
 			}
-			if (process.platform === 'win32') {
-				value = value.replace(/\//g, '\\');
-			}
+			// if (process.platform === 'win32') {
+			// 	value = value.replace(/\//g, '\\');
+			// }
 			this._fsPath = value;
 		}
 		return this._fsPath;

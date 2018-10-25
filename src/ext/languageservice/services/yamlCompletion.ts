@@ -19,6 +19,20 @@ import * as nls from 'vscode-nls';
 import { matchOffsetToDocument } from '../utils/arrUtils';
 const localize = nls.loadMessageBundle();
 
+declare global {
+  interface String {
+    trimLeft();
+    trimRight();
+  }
+}
+
+String.prototype.trimLeft = function() {
+  return this.replace(/^\s+/,"");
+}
+
+String.prototype.trimRight = function() {
+  return this.replace(/^\s+/,"");
+}
 
 export class YAMLCompletion {
 
