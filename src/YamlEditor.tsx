@@ -1,4 +1,6 @@
 
+/// <reference path="ext/monaco.d.ts"/>
+
 import * as React from 'react';
 import * as monaco from 'monaco-editor-core';
 const Worker = require('worker-loader!./ext/yaml.worker');
@@ -39,6 +41,16 @@ export class YamlEditor extends React.Component<YamlEditor.Props> {
         language: 'yaml',
         ...options,
       });
+      monaco.languages['yaml'].yamlDefaults.setDiagnosticsOptions({
+				validate: true,
+				schemas: [
+					{
+						uri: 'https://raw.githubusercontent.com/garethr/kubernetes-json-schema/master/master/deployment.json',
+						fileMatch: ['*'],
+					},
+				],
+			});
+
     }
   }
 
