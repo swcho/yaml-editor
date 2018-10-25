@@ -9,13 +9,15 @@ require('./ext/monaco.contribution')
 window['MonacoEnvironment'] = {
   getWorker(workerId, label) {
     console.log({ workerId, label });
-    const ret = new Worker()
-    return ret;
+    if (label === 'yaml') {
+      return new Worker();
+    }
+    return null;
   },
-  getWorkerUrl(workerId, label) {
-    debugger;
-    return 'monaco-editor-worker-loader-proxy.js';
-  }
+  // getWorkerUrl(workerId, label) {
+  //   debugger;
+  //   return 'monaco-editor-worker-loader-proxy.js';
+  // }
 };
 
 export class YamlEditor extends React.Component<YamlEditor.Props> {

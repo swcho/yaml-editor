@@ -73,6 +73,5 @@ monaco.languages.register({
 	mimetypes: ['application/x-yaml']
 });
 monaco.languages.onLanguage('yaml', () => {
-  // debugger;
-	// withMode(mode => mode.setupMode(yamlDefaults));
+	withMode(mode => mode.setupMode(yamlDefaults));
 });

@@ -12,7 +12,6 @@ const ctx: Worker = self as any;
 ctx.onmessage = () => {
 	// ignore the first message
 	worker.initialize((ctx, createData) => {
-    debugger;
 		return new YAMLWorker(ctx, createData)
 	});
 };
