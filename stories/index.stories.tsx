@@ -27,6 +27,8 @@ stories
     withInfo({ inline: true})(
       () =>
         <GithubYamlEditor
+          repoFullName="swcho/ex_k8s"
+          contentPath="/kubia-rc.yaml"
         />
     )
   )
